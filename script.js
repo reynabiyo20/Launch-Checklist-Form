@@ -49,7 +49,7 @@ window.addEventListener("load", function () {
       } else if (copilotNameInput.value.trim() === "") {
          alert("Copilot name cannot be blank. ");
       } else if (fuelLevelInput.value.trim() === "") {
-         alert("Fuel Level cannot be blank.");
+         alert("Fuel level cannot be blank.");
       } else if (cargoMassInput.value.trim() === "") {
          alert("Cargo mass cannot be blank.");
       } else if (isNaN(fuelLevelInput.value) === true) {
