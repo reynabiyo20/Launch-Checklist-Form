@@ -44,7 +44,9 @@ window.addEventListener("load", function () {
 
 
 
-      if (pilotNameInput.value.trim() === "") {
+      if (pilotNameInput.value.trim() === "" && copilotNameInput.value.trim() === "" && fuelLevelInput.value.trim() === "" && cargoMassInput.value.trim() === "") {
+         alert("All fields are required");
+      } else if (pilotNameInput.value.trim() === "") {
          alert("Pilot name cannot be blank. ");
       } else if (copilotNameInput.value.trim() === "") {
          alert("Copilot name cannot be blank. ");
