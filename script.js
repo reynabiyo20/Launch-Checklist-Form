@@ -38,15 +38,18 @@ window.addEventListener("load", function () {
       let fuelStatus = document.getElementById("fuelStatus");
       let cargoStatus = document.getElementById("cargoStatus");
 
-      pilotStatus.innerHTML = `Pilot ${pilotNameInput.value} is ready for launch.`;
-      copilotStatus.innerHTML = `Copilot ${copilotNameInput.value} is ready for launch.`;
+
 
       if (pilotNameInput.value === "" || copilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
          alert("All fields are required.");
+      } else if (pilotNameInput.value === " " || copilotNameInput.value === " " || fuelLevelInput.value === " " || cargoMassInput.value === " ") {
+         alert("Blank is not a valid input.");
       } else if (isNaN(fuelLevelInput.value) === true || (isNaN(cargoMassInput.value) === true)) {
          alert("Please input a valid number.")
       } else {
 
+         pilotStatus.innerHTML = `Pilot ${pilotNameInput.value} is ready for launch.`;
+         copilotStatus.innerHTML = `Copilot ${copilotNameInput.value} is ready for launch.`;
 
          if (Number(fuelLevelInput.value) < 10000) {
             faultyItems.style.visibility = "visible";
