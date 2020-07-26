@@ -5,7 +5,11 @@ window.addEventListener("load", function () {
       response.json().then(function (json) {
          const planets = document.getElementById("missionTarget");
          for (planet of json) {
-            let index = 2;
+            function getRandomInt(max) {
+               return Math.floor(Math.random() * Math.floor(max));
+             }
+             
+            let index = getRandomInt(6);
             planets.innerHTML = `<h2>Mission Destination</h2>
                <ol>
                   <li>Name: ${json[index].name}</li>
