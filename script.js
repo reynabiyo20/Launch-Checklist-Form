@@ -40,36 +40,39 @@ window.addEventListener("load", function () {
 
 
 
-      if (pilotNameInput.value === "" || copilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
-         alert("All fields are required.");
-      } else if (pilotNameInput.value === " " || copilotNameInput.value === " " || fuelLevelInput.value === " " || cargoMassInput.value === " ") {
-         alert("Blank is not a valid input.");
-      } else if (isNaN(fuelLevelInput.value) === true || (isNaN(cargoMassInput.value) === true)) {
-         alert("Please input a valid number.")
+      if (pilotNameInput.value.trim() === "") {
+         alert("Pilot name cannot be blank. ");
+      } else if (copilotNameInput.value.trim() === "") {
+         alert("Copilot name cannot be blank. ");
+      } else if (fuelLevelInput.value.trim() === "") {
+         alert("Fuel Level cannot be blank.");
+      } else if (cargoMassInput.value.trim() === "") {
+         alert("Cargo mass cannot be blank.");
+      } else if (isNaN(fuelLevelInput.value) === true) {
+         alert("Please input a valid number for fuel level.");
+      } else if (isNaN(cargoMassInput.value) === true) {
+         (isNaN(cargoMassInput.value) === true)
+         alert("Please input a valid number for cargo mass.");
       } else {
 
          pilotStatus.innerHTML = `Pilot ${pilotNameInput.value} is ready for launch.`;
          copilotStatus.innerHTML = `Copilot ${copilotNameInput.value} is ready for launch.`;
+         faultyItems.style.visibility = "visible";
 
          if (Number(fuelLevelInput.value) < 10000) {
-            faultyItems.style.visibility = "visible";
             fuelStatus.innerHTML = "Fuel level too low for launch.";
          } else {
-            faultyItems.style.visibility = "visible";
             fuelStatus.innerHTML = "Fuel level high enough for launch.";
          };
 
          if (Number(cargoMassInput.value) > 10000) {
-            faultyItems.style.visibility = "visible";
-            cargoStatus.innerHTML = "Cargo mass too high to take off.";
+            cargoStatus.innerHTML = "Cargo mass too high to take off."
 
          } else {
-            faultyItems.style.visibility = "visible";
             cargoStatus.innerHTML = "Cargo mass low enough to take off.";
          };
 
          if (Number(fuelLevelInput.value) < 10000 || Number(cargoMassInput.value) > 10000) {
-            faultyItems.style.visibility = "visible";
             launchStatus.innerHTML = "Shuttle is not ready for launch.";
             launchStatus.style.color = "red";
 
