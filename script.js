@@ -14,7 +14,7 @@ window.addEventListener("load", function () {
                   <li>Distance from Earth: ${json[index].distance}</li>
                   <li>Number of Moons: ${json[index].moons}</li>
                </ol>
-               <img src="${json[index].image}">;
+               <img src="${json[index].image}">
                </div>`;
          };
       });
@@ -51,7 +51,6 @@ window.addEventListener("load", function () {
       } else if (isNaN(fuelLevelInput.value) === true) {
          alert("Please input a valid number for fuel level.");
       } else if (isNaN(cargoMassInput.value) === true) {
-         (isNaN(cargoMassInput.value) === true)
          alert("Please input a valid number for cargo mass.");
       } else {
 
@@ -61,15 +60,19 @@ window.addEventListener("load", function () {
 
          if (Number(fuelLevelInput.value) < 10000) {
             fuelStatus.innerHTML = "Fuel level too low for launch.";
+            fuelStatus.style.color = "red";
          } else {
             fuelStatus.innerHTML = "Fuel level high enough for launch.";
+            fuelStatus.style.color = "black";
          };
 
          if (Number(cargoMassInput.value) > 10000) {
-            cargoStatus.innerHTML = "Cargo mass too high to take off."
+            cargoStatus.innerHTML = "Cargo mass too high to take off.";
+            cargoStatus.style.color = "red";
 
          } else {
             cargoStatus.innerHTML = "Cargo mass low enough to take off.";
+            cargoStatus.style.color = "black";
          };
 
          if (Number(fuelLevelInput.value) < 10000 || Number(cargoMassInput.value) > 10000) {
